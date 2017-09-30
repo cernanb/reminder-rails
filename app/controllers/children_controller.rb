@@ -1,4 +1,5 @@
 class ChildrenController < ApplicationController
+  before_action :set_child, only: [:show]
 
   def new
     @child = Child.new
@@ -15,9 +16,17 @@ class ChildrenController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   private
     def child_params
       params.require(:child).permit(:dob, :first_name, :last_name, :gender)
+    end
+
+    def set_child
+      @child = Child.find_by(id: params[:id])
     end
 
 end
