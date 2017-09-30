@@ -5,7 +5,14 @@ class ChildrenController < ApplicationController
   end
 
   def create
+    child = current_user.children.build(child_params)
 
+    if child.save
+      # change to user show once built
+      redirect_to root_path
+    else
+      redirect_to new_child_path
+    end
   end
 
   private
