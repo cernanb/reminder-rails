@@ -2,9 +2,10 @@
 <%= form_for([@child,@event]) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.label :start_time %>
-  <%= f.datetime_field :start_time %>
-  <%= f.label :end_time %>
-  <%= f.datetime_field :end_time %>
+  <p><%= f.label :start_time %>
+  <%= f.datetime_field :start_time %></p>
+  <p><%= f.label :end_time %>
+  <%= f.datetime_field :end_time %></p>
+  <p><%= f.collection_radio_buttons(:caretaker_id, Caretaker.all, :id, :name) %></p>
   <%= f.submit %>
 <% end %>
