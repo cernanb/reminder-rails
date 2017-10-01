@@ -1,6 +1,7 @@
 class Child < ApplicationRecord
   belongs_to :parent, class_name: "User", foreign_key: "user_id"
   has_many :events
+  has_many :caretakers, through: :events
 
   scope :past_events, -> { joins(:events).where('events.end_time < ?', Time.now.to_date)}
 
