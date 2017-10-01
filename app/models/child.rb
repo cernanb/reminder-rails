@@ -5,10 +5,10 @@ class Child < ApplicationRecord
   scope :past_events, -> { joins(:events).where('events.end_time < ?', Time.now.to_date)}
 
   def past_events
-    events.where('events.end_time < ?', Time.now.to_date)
+    events.where('events.end_time < ?', Time.now.to_date).order(:start_time)
   end
 
   def future_events
-    events.where('events.end_time > ?', Time.now.to_date)
+    events.where('events.end_time > ?', Time.now.to_date).order(:start_time)
   end
 end

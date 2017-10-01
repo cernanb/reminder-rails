@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   def index
     @child = Child.find(params[:child_id])
-    @events = @child.events
+    @past_events = @child.past_events
+    @future_events = @child.future_events
   end
   def new
     @child = Child.find(params[:child_id])
