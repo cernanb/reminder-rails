@@ -1,0 +1,9 @@
+<h3>Create a new event for <%= @child.first_name %> </h3>
+<%= form_for([@child,@event]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :start_time %>
+  <%= f.datetime_field :start_time %>
+  <%= f.label :end_time %>
+  <%= f.datetime_field :end_time %>
+<% end %>
