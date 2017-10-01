@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users, :controller => "users/users"
   resources :events, only: [:show]
   resources :caretakers
+  get "test/twilio", to: "application#test"
 end
