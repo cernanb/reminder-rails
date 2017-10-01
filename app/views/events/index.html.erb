@@ -12,5 +12,6 @@
   <p><%= event.name %></p>
   <p><%= event.start_time.strftime("%b %d, %Y %l:%M %p") %></p>
   <p><%= event.end_time.strftime("%b %d, %Y %l:%M %p") %></p>
+  <p>Caretaker: <%= event.caretaker.name %></p>
   <hr />
 <% end %>
