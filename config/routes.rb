@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :users, :controller => "users/users"
   resources :events, only: [:show]
+  resources :caretakers
 end

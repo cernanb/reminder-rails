@@ -1,0 +1,10 @@
+<h1>Create a new Caretaker</h1>
+<%= form_for(@caretaker) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <p><%= f.label :email %>
+  <%= f.text_field :email %></p>
+  <p><%= f.label :phone_number %>
+  <%= f.text_field :phone_number %></p>
+  <%= f.submit %>
+<% end %>
