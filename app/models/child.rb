@@ -1,4 +1,14 @@
 class Child < ApplicationRecord
   belongs_to :parent, class_name: "User", foreign_key: "user_id"
   has_many :events
+
+  scope :past_events, -> { joins(:events).where('events.end_time < ?', Time.now.to_date)}
+
+  def past_events
+    events.where('events.end_time < ?', Time.now.to_date)
+  end
+
+  def future_events
+    events.where('events.end_time > ?', Time.now.to_date)
+  end
 end
