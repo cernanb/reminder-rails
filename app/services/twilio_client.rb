@@ -9,7 +9,7 @@ class TwilioClient
     @event = Event.first
     @client.messages.create(
       :from => "+16196781248",
-      :to => "+18585315793",
+      :to => "+18587177140",
       :body => "Don't forget to take #{@event.child.first_name} to #{@event.name} on #{@event.start_time.strftime("%b %d, %Y %l:%M %p")}"
     )
   end
