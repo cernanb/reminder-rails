@@ -20,6 +20,10 @@ class ChildrenController < ApplicationController
 
   end
 
+  def index
+    @children = current_user.children
+  end
+
   private
     def child_params
       params.require(:child).permit(:dob, :first_name, :last_name, :gender)

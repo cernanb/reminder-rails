@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :children do
     resources :events
   end
-  resources :users, :controller => "users/users"
+  resources :users, :controller => "users/users" do
+    resources :children, only: [:index]
+  end
   resources :events, only: [:show]
   resources :caretakers
   get "test/twilio", to: "application#test"
