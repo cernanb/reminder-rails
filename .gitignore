@@ -19,4 +19,6 @@
 .byebug_history
 
 NOTES.md
-.env
+.env/public/packs
+/public/packs-test
+/node_modules
