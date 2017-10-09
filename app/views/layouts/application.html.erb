@@ -11,19 +11,13 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <ul>
-    <% if user_signed_in? %>
-      <li><%= link_to "Sign Out", destroy_user_session_path, method: 'delete'   %></li>
-      <li><%= link_to "My Children", user_children_path(current_user) %>
-    <% else %>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Sign In", new_user_session_path   %></li>
-      <li><%= link_to "Sign Up", new_user_registration_path   %></li>
-
-    <% end %>
-    </ul>
-    <%= yield %>
+    <div class="uk-container uk-position-top-center">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <%= render "layouts/nav" %>
+    <div class="uk-container">
+      <%= yield %>
+    </div>
   </body>
 </html>
