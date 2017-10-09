@@ -11,10 +11,12 @@
   </head>
 
   <body>
-    <div class="uk-container uk-position-top-center">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <% if notice || alert %>
+    <div uk-alert class="uk-container uk-position-top-center">
+      <%= notice %>
+      <%= alert %>
     </div>
+    <% end %>
     <%= render "layouts/nav" %>
     <div class="uk-container">
       <%= yield %>
